@@ -20,7 +20,17 @@
           </tr>
         </thead>
         <tbody>
+          @foreach ($log as $item)
           <tr>
+            <td>2</td>
+            <td>{{$item->customer_first_name}} {{$item->customer_last_name}}</td>
+            <td>{{$item->customer_email}}</td>
+            <td> {{$item->message}}</td>
+            <td>{{$item->store_ref_code}}</td>
+            <td>{{$item->status}}</td>
+          </tr>   
+          @endforeach 
+          {{-- <tr>
             <td>1</td>
             <td>Alan Jellybean</td>
             <td>alan@gmail.com</td>
@@ -56,8 +66,9 @@
             quis nostrud exercitation ullamco laboris nisi ut.</td>
             <td>xyz456</td>
             <td>Closed</td>
-          </tr>
+          </tr> --}}
         </tbody>
       </table>
+      {{$log->links()}}
     </div>
   @endsection

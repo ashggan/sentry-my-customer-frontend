@@ -100,9 +100,11 @@ Route::group(['prefix' => '/admin', 'middleware' => 'backend.auth'], function ()
         return view('backend.complaints.complaintform');
     })->name('complaint.form');
 
-    Route::get('/complaint_log', function () {
-        return view('backend.complaints.complaintlog');
-    })->name('complaint.log');
+    // Route::get('/complaint_log', function () {
+    //     return view('backend.complaints.complaintlog');
+    // })->name('complaint.log');
+    Route::get('/complaint_log', 'ComplaintController@index');
+
 
     Route::get('/change-loc', function () {
         return view('backend.location.change_loc');
